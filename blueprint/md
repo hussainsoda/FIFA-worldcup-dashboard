@@ -1,0 +1,9 @@
+Folder structure — 6 HTML pages, clean separation of CSS modules (variables, components, animations, responsive), JS split into api.js / store.js / router.js / component files, and a /data folder for static JSON fallbacks.
+Page structure — index.html (live scores hub), matches.html, groups.html, bracket.html, stats.html, team.html. Each page shares the same nav shell and is hydrated by the router without a full reload.
+Component hierarchy — App Shell → Router → 6 page components, each owning 2–3 child components. A separate shared layer covers FlagBadge, CountdownTimer, SkeletonLoader, ToastAlert, and PulseIndicator.
+API architecture — api.js wraps every fetch() with retry logic, a rate-limit guard, and a sessionStorage cache layer. store.js is the single source of truth; components subscribe via a lightweight event bus. Polling intervals are tiered: 30 seconds for live data, 5 minutes for standings, 30 minutes for schedule.
+Data flow — External API → API Manager (cache + polling) → Central Store → Components re-render via store subscription. Local JSON seeds act as the fallback during dev or API failure.
+Responsive strategy — Bootstrap 5 grid with 4 breakpoints. Mobile gets a bottom tab bar and single-column cards. Tablet gets a sidebar + main split. Desktop gets a full 3-column layout.
+Color palette — Navy #0B2D6E (primary), FIFA Red #D4173A (accent), Gold #C9A84C (highlight / trophy), with semantic greens/ambers/reds for live indicators, cards, and goals.
+Typography — Bebas Neue for display and scores (that punchy stadium-scoreboard feel), Inter for all body/UI text, Inter Mono for stats.
+Animation plan — 9 purposeful animations: score digit flip on goal, live pulse badge, goal toast, skeleton shimmer, tab fade, stat bar grow, bracket hover lift, countdown tick, and flag stagger entrance.
