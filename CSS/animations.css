@@ -1,0 +1,144 @@
+/* ============================================================
+   FIFA World Cup 2026 — Animations
+   animations.css
+   ============================================================ */
+
+/* ── Live Pulse ────────────────────────────────────────────── */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.85); }
+}
+
+@keyframes livePulseRing {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* ── Score Flip (goal animation) ───────────────────────────── */
+@keyframes scoreFlip {
+  0%   { transform: scale(1); color: var(--wc-text-primary); }
+  25%  { transform: scale(1.4); color: var(--wc-gold); }
+  60%  { transform: scale(1.2); color: var(--wc-gold-light); }
+  100% { transform: scale(1); color: var(--wc-text-primary); }
+}
+
+/* ── Shimmer (skeleton loader) ─────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Toast In / Out ────────────────────────────────────────── */
+@keyframes toastIn {
+  0%   { opacity: 0; transform: translateX(110%) scale(0.9); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes toastOut {
+  0%   { opacity: 1; transform: translateX(0) scale(1); }
+  100% { opacity: 0; transform: translateX(110%) scale(0.9); }
+}
+
+/* ── Hero Entrance ─────────────────────────────────────────── */
+@keyframes heroFadeUp {
+  0%   { opacity: 0; transform: translateY(32px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ── Stat Bar Grow ─────────────────────────────────────────── */
+@keyframes barGrow {
+  0%   { width: 0%; }
+  100% { width: var(--bar-width); }
+}
+
+/* ── Flag Stagger ──────────────────────────────────────────── */
+@keyframes flagSlideIn {
+  0%   { opacity: 0; transform: translateX(-12px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ── Card Reveal (scroll) ──────────────────────────────────── */
+@keyframes cardReveal {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.97); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Page Transition ───────────────────────────────────────── */
+@keyframes pageFadeIn {
+  0%   { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Countdown Tick ────────────────────────────────────────── */
+@keyframes countTick {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
+/* ── Glow Pulse (hero accent) ──────────────────────────────── */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.8; }
+}
+
+/* ── Trophy Spin (decorative) ──────────────────────────────── */
+@keyframes trophyFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ── Bracket Hover ─────────────────────────────────────────── */
+@keyframes bracketHover {
+  0%   { transform: translateY(0); box-shadow: var(--shadow-card); }
+  100% { transform: translateY(-3px); box-shadow: var(--shadow-card), var(--shadow-glow); }
+}
+
+/* ── Tab Switch ────────────────────────────────────────────── */
+@keyframes tabSwitch {
+  0%   { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Helper Animation Classes ──────────────────────────────── */
+.anim-fade-up {
+  animation: heroFadeUp var(--dur-slow) var(--ease-out) both;
+}
+
+.anim-fade-in {
+  animation: heroFadeIn var(--dur-slow) var(--ease-out) both;
+}
+
+.anim-delay-1 { animation-delay: 100ms; }
+.anim-delay-2 { animation-delay: 200ms; }
+.anim-delay-3 { animation-delay: 350ms; }
+.anim-delay-4 { animation-delay: 500ms; }
+.anim-delay-5 { animation-delay: 650ms; }
+
+.anim-page {
+  animation: pageFadeIn 250ms var(--ease-out) both;
+}
+
+/* ── Scroll-triggered reveal (JS adds .revealed) ──────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger:nth-child(2) { transition-delay: 80ms; }
+.reveal-stagger:nth-child(3) { transition-delay: 160ms; }
+.reveal-stagger:nth-child(4) { transition-delay: 240ms; }
+.reveal-stagger:nth-child(5) { transition-delay: 320ms; }
+.reveal-stagger:nth-child(6) { transition-delay: 400ms; }

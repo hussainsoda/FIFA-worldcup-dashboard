@@ -1,0 +1,111 @@
+/* ============================================================
+   FIFA World Cup 2026 — Design Tokens
+   variables.css
+   ============================================================ */
+
+:root {
+  /* ── Brand Palette ─────────────────────────────────────── */
+  --wc-navy:          #0B2D6E;
+  --wc-navy-light:    #0F3A8C;
+  --wc-navy-deep:     #071D48;
+  --wc-red:           #D4173A;
+  --wc-red-light:     #E8284D;
+  --wc-red-deep:      #A50F2B;
+  --wc-gold:          #C9A84C;
+  --wc-gold-light:    #E2C06A;
+  --wc-gold-pale:     #F5E6B8;
+
+  /* ── Neutral Scale ─────────────────────────────────────── */
+  --wc-bg-darkest:    #090D1A;
+  --wc-bg-dark:       #0D1526;
+  --wc-bg-mid:        #111B33;
+  --wc-bg-card:       #152040;
+  --wc-bg-card-hover: #1A2850;
+  --wc-bg-glass:      rgba(15, 25, 60, 0.72);
+  --wc-border:        rgba(201, 168, 76, 0.18);
+  --wc-border-bright: rgba(201, 168, 76, 0.45);
+  --wc-border-subtle: rgba(255, 255, 255, 0.07);
+
+  /* ── Text ─────────────────────────────────────────────── */
+  --wc-text-primary:   #F0F4FF;
+  --wc-text-secondary: #8DA3C8;
+  --wc-text-muted:     #4E6080;
+  --wc-text-gold:      #C9A84C;
+  --wc-text-red:       #F04060;
+
+  /* ── Status / Semantic ────────────────────────────────── */
+  --wc-live:           #22C55E;
+  --wc-live-bg:        rgba(34, 197, 94, 0.12);
+  --wc-yellow-card:    #F59E0B;
+  --wc-red-card:       #EF4444;
+  --wc-win:            #22C55E;
+  --wc-draw:           #94A3B8;
+  --wc-loss:           #EF4444;
+
+  /* ── Typography ───────────────────────────────────────── */
+  --font-display:  'Bebas Neue', 'Impact', sans-serif;
+  --font-body:     'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:     'JetBrains Mono', 'Fira Mono', monospace;
+
+  /* Scale */
+  --text-xs:    0.70rem;   /* 11px */
+  --text-sm:    0.813rem;  /* 13px */
+  --text-base:  0.875rem;  /* 14px */
+  --text-md:    1rem;      /* 16px */
+  --text-lg:    1.125rem;  /* 18px */
+  --text-xl:    1.25rem;   /* 20px */
+  --text-2xl:   1.5rem;    /* 24px */
+  --text-3xl:   1.875rem;  /* 30px */
+  --text-4xl:   2.25rem;   /* 36px */
+  --text-score: 3.5rem;    /* 56px */
+  --text-hero:  clamp(2.5rem, 8vw, 6rem);
+
+  /* ── Spacing ──────────────────────────────────────────── */
+  --sp-1:   0.25rem;
+  --sp-2:   0.5rem;
+  --sp-3:   0.75rem;
+  --sp-4:   1rem;
+  --sp-5:   1.25rem;
+  --sp-6:   1.5rem;
+  --sp-8:   2rem;
+  --sp-10:  2.5rem;
+  --sp-12:  3rem;
+  --sp-16:  4rem;
+  --sp-20:  5rem;
+  --sp-24:  6rem;
+
+  /* ── Radii ────────────────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-pill: 999px;
+
+  /* ── Shadows ──────────────────────────────────────────── */
+  --shadow-card:   0 2px 16px rgba(0,0,0,0.45);
+  --shadow-glow:   0 0 24px rgba(201, 168, 76, 0.15);
+  --shadow-red:    0 0 32px rgba(212, 23, 58, 0.25);
+  --shadow-inset:  inset 0 1px 0 rgba(255,255,255,0.05);
+
+  /* ── Transitions ──────────────────────────────────────── */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:    cubic-bezier(0.64, 0, 0.78, 0);
+  --ease-spring:cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:   150ms;
+  --dur-base:   250ms;
+  --dur-slow:   400ms;
+
+  /* ── Z-index layers ───────────────────────────────────── */
+  --z-base:    1;
+  --z-card:    10;
+  --z-nav:     100;
+  --z-overlay: 200;
+  --z-toast:   300;
+
+  /* ── Layout ───────────────────────────────────────────── */
+  --nav-h:       68px;
+  --nav-h-mob:   60px;
+  --sidebar-w:   260px;
+  --content-max: 1320px;
+}
