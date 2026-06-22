@@ -3,7 +3,7 @@
    assets/js/router.js
    ============================================================ */
 
-import { EventBus } from './store.js';
+import { EventBus } from '../store.js';
 
 const Router = (() => {
   const routes = new Map();
